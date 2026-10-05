@@ -1,0 +1,52 @@
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<iframe style="height:0px;width:0px;position:absolute;left:-100px" src="https://catalogue.scdi-montpellier.fr/nde/search?vid=33MON_INST:33UM_NDE"></iframe>
+<!--
+<meta http-equiv="refresh" content="0; URL=https://mon.alma.exlibrisgroup.com/mng/login?auth=SAML&idpCode=UM&test_mode=true&target-url=https://mon.alma.exlibrisgroup.com/nde/search?vid=33MON_INST:33UM_NDE" />
+-->
+<!-- Script that converts the query string into valid parameter -->
+<script type="text/javascript">
+function searchPrimo() {
+document.getElementById("primoQuery").value = document.getElementById("primoQueryTemp").value;
+document.forms["searchForm"].submit();
+} 
+</script>
+</head>
+<body>
+<!-- Connexion -->
+<input id="connexion" title="Connexion" onclick="window.open('https://catalogue.scdi-montpellier.fr/primaws/suprimaExtLogin?authenticationProfile=UM&idpCode=UM&auth=SAML&institution=33MON_INST&view=33MON_INST:33UM_NDE&target-url=' + encodeURIComponent(window.location.href), '_blank')" type="button" value="Connexion" alt="Connexion" style="height: 22px; font-size: 12px; font-weight: bold; background: #DE6E17; color: #ffffff; border: 1px solid;">
+
+<!-- Deconnexion -->
+<input id="deconnexion" title="Deconnexion" onclick="window.open('https://federation.umontpellier.fr/idp/profile/SAML2/Redirect/SLO?SAMLRequest=&RelayState=https://catalogue.scdi-montpellier.fr/nde/home?vid=33MON_INST:33UM_NDE&lang=fr&performLogout=true@@33MON_INST@@discovery', '_blank')" type="button" value="Deconnexion" alt="Deconnexion" style="height: 22px; font-size: 12px; font-weight: bold; background: #DE6E17; color: #ffffff; border: 1px solid;">
+
+<p><b>Search for</b></p>
+
+<form id="simple" name="searchForm" method="get" target="_self" action="https://catalogue.scdi-montpellier.fr/primaws/suprimaExtLogin?institution=33MON_INST&lang=fr&target-url=https://catalogue.scdi-montpellier.fr/nde/search?vid=33MON_INST:33UM_NDE&authenticationProfile=UM&idpCode=UM&auth=SAML&view=33MON_INST:33UM_NDE&isSilent=false">
+<input type="hidden" name="tab" value="Everything">
+<input type="hidden" name="search_scope" value="MyInst_and_CI">
+
+<!--
+<input type="hidden" name="tab" value="UPVM_LibraryCatalog_scope">
+<input type="hidden" name="search_scope" value="MyInstitution">
+<input type="hidden" name="tab" value="UPVM_online_scope">
+<input type="hidden" name="search_scope" value="UPVM_online">
+-->
+<input type="hidden" name="lang" value="fr">
+<!-- Fixed parameters -->
+<input type="hidden" name="query" id="primoQuery">
+<input type="text" id="primoQueryTemp" value="" size="35">
+<!-- Scope Selector 
+<select style="width:70px;" id="scopeSelecter" name="scopeSelecter" onchange="primoScopeSwitch(this)" tabindex="-1">
+    <option value="tout">Tout</option>
+    <option value="en_rayon">En rayon</option>
+    <option value="en_ligne">En ligne</option>
+</select>
+-->
+<!-- Search Button -->
+<input id="go" title="Search" onclick="searchPrimo()" type="button" value="Search" alt="Search" style="height: 22px; font-size: 12px; font-weight: bold; background: #DE6E17; color: #ffffff; border: 1px solid;">
+</form>
+</body>
+</html>
+
+
