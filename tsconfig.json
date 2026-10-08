@@ -1,6 +1,9 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "types": ["jasmine"],
+    // "ignoreDeprecations": "6.0",       
+    "rootDir": "./src",             
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

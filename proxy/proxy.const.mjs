@@ -5,3 +5,4 @@ const environments = {
   }
   
   export const PROXY_TARGET = environments['example'];  
+  console.log(`[proxy] Active proxy target: ${PROXY_TARGET}`);
