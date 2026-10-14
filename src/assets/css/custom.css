@@ -61,17 +61,9 @@ header.top-bar.flex-column {
     top: 60% !important;
 }
 
-/* hauteur de l'image de la barre de recherche */
+/* hauteur de l'image de la barre de recherche : suit la hauteur de l'écran */
 .custom-search-bar-container {
-    height: 41rem !important;
-}
-
-
-/* Desktop : inchangé (remplace ton ancienne règle height: 41.5rem) */
-@media (min-width: 1162px) {
-  .custom-search-bar-container {
-    height: 41.5rem !important;
-  }
+    height: clamp(26rem, 65vh, 41.5rem) !important;
 }
 
 /* < 1162px : hauteur au contenu, boutons collés en bas de l'image */
