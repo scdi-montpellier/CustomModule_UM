@@ -295,10 +295,12 @@ display: none;
 		Database search
 -------------------------------- */
 
+/*
 .database-homepage-container .description-container ul.category-list .category-list-item::marker {
   color: transparent;
   font-size: 0;
 }
+*/
 
 /* affiche le menu des disciplines sur la page base de données */
 nde-categories {
