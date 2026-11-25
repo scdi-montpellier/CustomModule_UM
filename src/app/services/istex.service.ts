@@ -172,16 +172,19 @@ export class IstexService implements OnDestroy {
       return 'https://api.istex.fr/document/openurl?rft.title=%22' + title + '%22&rft.isbn=' + isbn + '&noredirect=1&sid=focus';
     }
     
-    // Priorité 4: Author + Title
-    if (authorLastName && authorLastName.trim() !== "" && title && title.trim() !== "") {
-      return 'https://api.istex.fr/document/openurl?rft.title=%22' + title + '%22&rft.au=' + authorLastName + '&noredirect=1&sid=focus';
-    }
+  // Priorité 4 : Titre + Auteur + Date (les trois sont requis)
+    if (authorLastName?.trim() && title?.trim() && date?.trim()) {
+      return 'https://api.istex.fr/document/openurl?rft.title=%22' + title +
+         '%22&rft.au=' + authorLastName +
+         '&rft.date=' + date + '&noredirect=1&sid=focus';
+}
     
     // Priorité 5: Date + Title
+    /*
     if (date && date.trim() !== "" && title && title.trim() !== "") {
       return 'https://api.istex.fr/document/openurl?rft.title=%22' + title + '%22&rft.date=' + date + '&noredirect=1&sid=focus';
     }
-    
+    */
     return null;
   }
 
